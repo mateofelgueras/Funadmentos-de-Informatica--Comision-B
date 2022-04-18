@@ -11,14 +11,13 @@ def lineadearchivo(archivo, letra):
         return contador
 
 #Ejercicio 2
-def imprimirnlineas(archivo, n):
+def leerarchivoyimprimirnlineas(archivo, n):
     """
     Funcion que lee un archivo y imprime las n primeras lineas
     """
-    with open(archivo) as f:
+    with open(archivo, "r") as f:
         for i in range(n):
-            linea = f.readline()
-            print(linea)
+            print(f.readline())
 
 #Ejercicio 4
 def cuantaspalabrasarchivo(archivo):
