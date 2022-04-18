@@ -1,11 +1,20 @@
 #Ejercicio 1
 def lineadearchivo(archivo, letra):
-    with open(archivo) as f:
+    """
+    Funcion que lee un archivo y dice cuantas lineas empiezan con n letra
+    """
+    with open(archivo, "r") as f:
+        contador = 0
         linea = f.readline()
-        return linea
+        if linea[0] == letra:
+            contador += 1        
+        return contador
 
 #Ejercicio 2
 def imprimirnlineas(archivo, n):
+    """
+    Funcion que lee un archivo y imprime las n primeras lineas
+    """
     with open(archivo) as f:
         for i in range(n):
             linea = f.readline()
@@ -13,15 +22,18 @@ def imprimirnlineas(archivo, n):
 
 #Ejercicio 4
 def cuantaspalabrasarchivo(archivo):
-    with open(archivo) as f:
+    """
+    Leer archivo y cuantas palabras tiene
+    """
+    with open(archivo, "r") as f:
         linea = f.readline()
         palabras = linea.split()
         return len(palabras)
 
 #Ejercicio 7
-def def maslarga(archivo):
+def maslarga(archivo):
     """
-    Funcion que lee un archivo y devuelve la palabra mas larga
+    Leer archivo y palabra mas larga
     """
     with open(archivo, 'r') as f:
         palabras = f.read().split()
