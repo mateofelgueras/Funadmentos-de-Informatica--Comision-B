@@ -51,3 +51,6 @@ def frecuenciadecadapalabra(archivo, palabra):
                 contador += 1
         return contador/len(palabras)
 
+
+
+
