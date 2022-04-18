@@ -11,7 +11,7 @@ def lineadearchivo(archivo, letra):
         return contador
 
 #Ejercicio 2
-def leerarchivoyimprimirnlineas(archivo, n):
+def imprimirlineas(archivo, n):
     """
     Funcion que lee un archivo y imprime las n primeras lineas
     """
@@ -39,8 +39,17 @@ def maslarga(archivo):
         maslarga = max(palabras, key=len)
     return print(maslarga), print(len(maslarga))
 
+#Ejercicio 8
+def Joinfiles(file1, file2, file3):
+    """
+    Junta dos archivos en uno nuevo
+    """
+    with open(file1, "r") as f1, open(file2, "r") as f2, open(file3, "a") as f3:
+        f3.write(f1.read() + f2.read())
+Joinfiles("Docuemento 1", "Documento 2", "Documento 3")
+
 #Ejercicio 9
-def frecuenciadecadapalabra(archivo, palabra):
+def frecuencia_palabra(archivo, palabra):
     with open(archivo) as f:
         linea = f.readline()
         palabras = linea.split()
