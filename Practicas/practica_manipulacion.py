@@ -20,7 +20,7 @@ def imprimirlineas(archivo, n):
             print(f.readline())
 
 #Ejercicio 3
-def leaarchivoyimprimirlineas(archivo, n):
+def nulineas(archivo, n):
     """
     Leer archivo y imprimir las n ultimas lineas
     """
@@ -39,6 +39,14 @@ def cuantaspalabrasarchivo(archivo):
         linea = f.readline()
         palabras = linea.split()
         return len(palabras)
+
+#Ejercicio 5
+def remplazarletra(archivo, letra):
+    with open(archivo, "r") as f:
+        linea = f.readline()
+        lineas = linea.replace(letra, letra + "\n")
+        with open("archivo_nuevo", "w") as f2:
+            f2.write(lineas)
 
 #Ejercicio 7
 def maslarga(archivo):
