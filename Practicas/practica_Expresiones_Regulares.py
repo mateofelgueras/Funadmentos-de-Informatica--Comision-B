@@ -32,4 +32,13 @@ def todos_caracter_permitido(string):
     else:
         print("La palabra no tiene todos sus caracteres permitidos")
 
+#Ejercicio 3
+def hseguguidadee(string):
+    import re
+    re.search("h", string)
 
+#Ejercicio 4
+def palabraconguionbajo(string):
+    import re
+    print(bool(re.search("_", string)))
+    
