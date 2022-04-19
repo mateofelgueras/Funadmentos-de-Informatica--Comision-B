@@ -16,3 +16,20 @@ def caracter_permitido(string):
         print("La palabra no tiene al menos un caracter permitido")
 
 #Ejercico 2
+"""
+Funcion que dice si un string tiene todos sus caracteres del alfabeto minuscula, Mayuscula o nuemero
+"""
+def todos_caracter_permitido(string):
+    listaaz = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    lista = list(listaaz)
+    palabras = list(string)
+    contador = 0
+    for c in palabras:
+        if c in lista:
+            contador += 1
+    if contador == len(string):
+        print("La palabra tiene todos sus caracteres permitidos")
+    else:
+        print("La palabra no tiene todos sus caracteres permitidos")
+
+
