@@ -41,10 +41,24 @@ def cuantaspalabrasarchivo(archivo):
         return len(palabras)
 
 #Ejercicio 5
-def remplazarletra(archivo, letra):
+"""
+Lee archivo y cambia n letra por esa letra y un salto de linea
+"""
+def remplazar_letra(archivo, letra):
     with open(archivo, "r") as f:
         linea = f.readline()
         lineas = linea.replace(letra, letra + "\n")
+        with open("archivo_nuevo", "w") as f2:
+            f2.write(lineas)
+
+#Ejercicio 6
+"""
+Lee archivo y saca los saltos de linea
+"""
+def sin_salto_de_linea(archivo):
+    with open(archivo, "r") as f:
+        linea = f.readline()
+        lineas = linea.replace("\n", "")
         with open("archivo_nuevo", "w") as f2:
             f2.write(lineas)
 
@@ -77,6 +91,8 @@ def frecuencia_palabra(archivo, palabra):
             if palabras[i] == palabra:
                 contador += 1
         return contador/len(palabras)
+
+
 
 
 
