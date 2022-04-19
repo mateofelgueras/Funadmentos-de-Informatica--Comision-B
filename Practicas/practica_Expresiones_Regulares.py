@@ -65,3 +65,16 @@ def strings_en_frase(listadestrings,  frase):
         if re.search(string, frase):
             contador += 1
     print(contador > 0)
+
+#Ejercicio 7
+"""
+Funcion que encuentra un string que con todos caracteres permitidos y lo imprima
+"""
+def Stringsoloconcaracterespermitidos(archivo):
+    import re
+    with open(archivo, "r") as f:
+        lineas = f.readlines()
+        palabras = lineas.split()
+        for palabra in palabras:
+            if re.search("^[a-zA-Z0-9_]+$", palabra):
+                print(palabra)
