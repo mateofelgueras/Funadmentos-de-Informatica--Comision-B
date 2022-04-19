@@ -19,6 +19,17 @@ def imprimirlineas(archivo, n):
         for i in range(n):
             print(f.readline())
 
+#Ejercicio 3
+def leaarchivoyimprimirlineas(archivo, n):
+    """
+    Leer archivo y imprimir las n ultimas lineas
+    """
+    with open(archivo, "r") as f:
+        lineas=[]
+        for linea in lineas:
+            lineas.append(f.readline())
+        print(lineas[-n:])
+
 #Ejercicio 4
 def cuantaspalabrasarchivo(archivo):
     """
