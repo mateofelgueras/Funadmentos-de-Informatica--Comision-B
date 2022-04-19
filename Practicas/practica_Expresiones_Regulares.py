@@ -39,7 +39,7 @@ def hseguguidadee(string):
 
 #Ejercicio 4
 """
-Funcion que dice si el string une dos palabras con guin bajo
+Funcion que dice si el string une dos palabras con guion bajo
 """
 def palabra_con_guion(string):
     import re
@@ -78,3 +78,24 @@ def Stringsoloconcaracterespermitidos(archivo):
         for palabra in palabras:
             if re.search("^[a-zA-Z0-9_]+$", palabra):
                 print(palabra)
+
+#Ejercicio 8
+"""
+Funcion que devuelve los caracteres numericos de un string
+"""
+def numeros_en_string(string):
+    import re
+    print(re.findall("[0-9]", string))
+
+#Ejercicio 9
+"""
+
+"""
+def devolverstringsentreguiones(string):
+
+#Ejercicio 10
+def dospalabrasempiezenconletrap(listadestrings):
+    import re
+    for string in listadestrings:
+        if re.search("P{2}", string):
+            print(string)
