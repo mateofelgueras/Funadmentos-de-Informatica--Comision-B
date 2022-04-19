@@ -38,7 +38,20 @@ def hseguguidadee(string):
     re.search("h", string)
 
 #Ejercicio 4
+"""
+Funcion que dice si el string une dos palabras con guin bajo
+"""
 def palabraconguionbajo(string):
     import re
     print(bool(re.search("_", string)))
-    
+
+#Ejercicio 5
+"""
+Funcion que dice si un string empieza con x numero especifico
+"""
+def empieza_con_numero(string, numero):
+    import re
+    print(bool(re.search("^"+str(numero), string)))
+
+
+#Ejercicio 6
