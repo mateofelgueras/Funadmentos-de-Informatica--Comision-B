@@ -53,7 +53,7 @@ def remplazar_letra(archivo, letra):
 
 #Ejercicio 6
 """
-Lee archivo y saca los saltos de linea
+Lee archivo y sacar los saltos de linea
 """
 def sin_salto_de_linea(archivo):
     with open(archivo, "r") as f:
@@ -65,7 +65,7 @@ def sin_salto_de_linea(archivo):
 #Ejercicio 7
 def maslarga(archivo):
     """
-    Leer archivo y palabra mas larga
+    Leer archivo y arrojar palabra mas larga
     """
     with open(archivo, 'r') as f:
         palabras = f.read().split()
@@ -82,6 +82,9 @@ def Joinfiles(file1, file2, file3):
 Joinfiles("Docuemento 1", "Documento 2", "Documento 3")
 
 #Ejercicio 9
+"""
+Funcion que lee un archivo y arroja la frecuencia de n palabra
+"""
 def frecuencia_palabra(archivo, palabra):
     with open(archivo) as f:
         linea = f.readline()
@@ -92,7 +95,19 @@ def frecuencia_palabra(archivo, palabra):
                 contador += 1
         return contador/len(palabras)
 
-
+#Ejercicio 10
+def  agregararchivos(path_carpeta):
+    """
+    Funcion que añade a un archivo dado todos los archivos de texto (.txt) que hayan en una determinada carpeta.
+    """
+    import os
+    lista = os.listdir(path_carpeta)
+    for i in lista:
+        if i.endswith(".txt"):
+            with open("documento", "a") as f:
+                with open(i, "r") as f2:
+                    f.write(f2)
+   
 
 
 
