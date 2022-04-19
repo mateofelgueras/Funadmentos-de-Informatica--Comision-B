@@ -41,7 +41,7 @@ def hseguguidadee(string):
 """
 Funcion que dice si el string une dos palabras con guin bajo
 """
-def palabraconguionbajo(string):
+def palabra_con_guion(string):
     import re
     print(bool(re.search("_", string)))
 
@@ -55,3 +55,13 @@ def empieza_con_numero(string, numero):
 
 
 #Ejercicio 6
+"""
+Funcion que dice si un string de una lista de strings esta en una frase dada
+"""
+def strings_en_frase(listadestrings,  frase):
+    import re
+    contador = 0
+    for string in listadestrings:
+        if re.search(string, frase):
+            contador += 1
+    print(contador > 0)
