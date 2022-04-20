@@ -5,10 +5,10 @@ def lineadearchivo(archivo, letra):
     """
     with open(archivo, "r") as f:
         contador = 0
-        linea = f.readline()
-        if linea[0] == letra:
-            contador += 1        
-        return contador
+        for linea in f:
+            if linea.startswith(letra):
+                contador += 1
+    print(contador)
 
 #Ejercicio 2
 def imprimirlineas(archivo, n):
