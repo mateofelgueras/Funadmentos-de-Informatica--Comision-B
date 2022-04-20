@@ -100,7 +100,8 @@ def dospalabrasempiezenconletrap(listadestrings):
     for string in listadestrings:
         if re.search("P{2}", string):
             print(string)
-
+            
+#Ejercicio 12
 def remplazar_por_barra(string):
     import re
     print(re.sub(r"""[: _!?'".<>(){}@%&*/[/]""", "|", string))
