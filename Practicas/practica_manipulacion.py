@@ -36,7 +36,7 @@ def cuantaspalabrasarchivo(archivo):
     Leer archivo y cuantas palabras tiene
     """
     with open(archivo, "r") as f:
-        linea = f.readline()
+        linea = f.read()
         palabras = linea.split()
         return len(palabras)
 
@@ -45,8 +45,9 @@ def cuantaspalabrasarchivo(archivo):
 Lee archivo y cambia n letra por esa letra y un salto de linea
 """
 def remplazar_letra(archivo, letra):
+    import re
     with open(archivo, "r") as f:
-        linea = f.readline()
+        linea = f.read()
         lineas = linea.replace(letra, letra + "\n")
         with open("archivo_nuevo", "w") as f2:
             f2.write(lineas)
