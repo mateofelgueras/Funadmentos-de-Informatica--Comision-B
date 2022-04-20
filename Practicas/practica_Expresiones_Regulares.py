@@ -2,6 +2,9 @@
 """
 Funcion que dice si un string tiene algun caracter del alfabeto minuscula, Mayuscula o nuemero
 """
+from pytest import importorskip
+
+
 def caracter_permitido(string):
     listaaz = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     lista = list(listaaz)
@@ -93,15 +96,35 @@ def numeros_en_string(string):
 """
 def devolverstringsentreguiones(string):
     
+#Ejercicio 10
 
 #Ejercicio 11
+"""
+Funcion que devuelve los string que tienen 2 Letras P mayusculas
+"""
 def dospalabrasempiezenconletrap(listadestrings):
     import re
     for string in listadestrings:
         if re.search("P{2}", string):
             print(string)
-            
+
 #Ejercicio 12
+"""
+Funcion que devulve un string cambiando sus espacios, guiones bajos y dos puntos por barra vertical
+"""
 def remplazar_por_barra(string):
     import re
-    print(re.sub(r"""[: _!?'".<>(){}@%&*/[/]""", "|", string))
+    print(re.sub(r"""[ _:]""", "|", string))
+
+#Ejercicio 14
+"""
+Funcion que devuelve un string cambiando sus espacios y tabs por ;
+"""
+def remplazar_por_espacio(string):
+    import re
+    print(re.sub(r"[    ]",";", string))
+
+#Ejercicio 15
+"""
+Funcion que se fija si un mail es valido
+"""
