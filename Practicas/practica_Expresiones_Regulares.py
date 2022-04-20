@@ -92,10 +92,15 @@ def numeros_en_string(string):
 
 """
 def devolverstringsentreguiones(string):
+    
 
-#Ejercicio 10
+#Ejercicio 11
 def dospalabrasempiezenconletrap(listadestrings):
     import re
     for string in listadestrings:
         if re.search("P{2}", string):
             print(string)
+
+def remplazar_por_barra(string):
+    import re
+    print(re.sub(r"""[: _!?'".<>(){}@%&*/[/]""", "|", string))
