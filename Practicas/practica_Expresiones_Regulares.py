@@ -36,17 +36,26 @@ def todos_caracter_permitido(string):
         print("La palabra no tiene todos sus caracteres permitidos")
 
 #Ejercicio 3
-def hseguguidadee(string):
+def tiene_h(string):
     import re
-    re.search("h", string)
+    print(bool(re.findall("he*", string)))
+
+def tienehee(string):
+    import re
+    print(bool(re.findall("he+", string)))
+
+def tiene_he23(string):
+    import re
+    print(bool(re.search("he{2,3}", string) and not re.search("heeee+", string)))
 
 #Ejercicio 4
 """
 Funcion que dice si el string une dos palabras con guion bajo
 """
-def palabra_con_guion(string):
+def unidas_por_guion(string):
     import re
-    print(bool(re.search("_", string)))
+    print(re.findall(r'([a-z]+)_([a-z]+)', string))
+
 
 #Ejercicio 5
 """
@@ -128,3 +137,8 @@ def remplazar_por_espacio(string):
 """
 Funcion que se fija si un mail es valido
 """
+def validar_mail_correcto(mail):
+    import re
+    valido = bool(re.match(r'(\S+)@(\w+)\.(\w+)', mail))
+    print(valido)
+     
