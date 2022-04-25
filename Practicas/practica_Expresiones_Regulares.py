@@ -3,50 +3,45 @@
 Funcion que dice si un string tiene algun caracter del alfabeto minuscula, Mayuscula o nuemero
 """
 from pytest import importorskip
+from sympy import re
 
 
 def caracter_permitido(string):
-    listaaz = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    lista = list(listaaz)
-    palabras = list(string)
-    contador = 0
-    for c in palabras:
-        if c in lista:
-            contador += 1
-    if contador > 0:
-        print("La palabra tiene al menos un caracter permitido")
-    else:
-        print("La palabra no tiene al menos un caracter permitido")
+    import re
+    print(len(re.findall(r"\w", string)) >0)
+#Findall: Lista de todas los coincidentes re.findall(r "lo que queres buscar 
+# expresion regular", string)
 
 #Ejercico 2
 """
 Funcion que dice si un string tiene todos sus caracteres del alfabeto minuscula, Mayuscula o nuemero
 """
 def todos_caracter_permitido(string):
-    listaaz = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    lista = list(listaaz)
-    palabras = list(string)
-    contador = 0
-    for c in palabras:
-        if c in lista:
-            contador += 1
-    if contador == len(string):
-        print("La palabra tiene todos sus caracteres permitidos")
-    else:
-        print("La palabra no tiene todos sus caracteres permitidos")
+    import re
+    print(not len(re.findall(r"\W", string)))
+
+# re findall \W mayuscula hace lista de caracteres no alfanuericos
+#len dice cuantos hay de esos caracteres 
+# not len si es distinto a 0 es falso.
 
 #Ejercicio 3
+"""Funcion que dice si hay h o seguidas de e en un string"""
 def tiene_h(string):
     import re
     print(bool(re.findall("he*", string)))
+# el asterisco es para que busque todas las combinaciones
+# (ab*) busca a, ab y a seguidas de una o mas b
 
-def tienehee(string):
+def tienehe(string):
     import re
     print(bool(re.findall("he+", string)))
+
+# (ab+) coincidirá con “a” seguido de cualquier num menos 0 de “b”; no coincidirá solo con “a”.
 
 def tiene_he23(string):
     import re
     print(bool(re.search("he{2,3}", string) and not re.search("heeee+", string)))
+# Funcion search comprueba si hay coincidencias que no se limiten al principio
 
 #Ejercicio 4
 """
@@ -57,6 +52,7 @@ def unidas_por_guion(string):
     print(re.findall(r'([a-z]+)_([a-z]+)', string))
 
 
+
 #Ejercicio 5
 """
 Funcion que dice si un string empieza con x numero especifico
@@ -64,6 +60,7 @@ Funcion que dice si un string empieza con x numero especifico
 def empieza_con_numero(string, numero):
     import re
     print(bool(re.search("^"+str(numero), string)))
+# ^ : Inicio de cadena
 
 
 #Ejercicio 6
@@ -72,24 +69,21 @@ Funcion que dice si un string de una lista de strings esta en una frase dada
 """
 def strings_en_frase(listadestrings,  frase):
     import re
-    contador = 0
-    for string in listadestrings:
-        if re.search(string, frase):
-            contador += 1
-    print(contador > 0)
+    for e in listadestrings:
+        print(bool(re.search(e, frase)))
 
 #Ejercicio 7
 """
 Funcion que encuentra un string que con todos caracteres permitidos y lo imprima
 """
-def Stringsoloconcaracterespermitidos(archivo):
+def Stringsoloconcaracterespermitidos(string):
     import re
-    with open(archivo, "r") as f:
-        lineas = f.readlines()
-        palabras = lineas.split()
-        for palabra in palabras:
-            if re.search("^[a-zA-Z0-9_]+$", palabra):
-                print(palabra)
+    import string
+    string_sin_espacios = string.replace(" ", "")
+    a = bool(re.search(r'[a-z]', string) and re.search(r'[A-Z]', string) and re.search(r"\s", string) and string_sin_espacios.isalnum())
+    print(a)
+#Isalnum si un string es todo alfanumerico devuelve true
+
 
 #Ejercicio 8
 """
@@ -101,21 +95,26 @@ def numeros_en_string(string):
 
 #Ejercicio 9
 """
-
+Funcion que devuelve las partes de 
 """
-def devolverstringsentreguiones(string):
+def a(string):
+    return (re.findall("-.*-", string))
     
 #Ejercicio 10
-
+def obtener_substring(substring):
+    a = print(re.split("@|&", substring))
+    print (a)
 #Ejercicio 11
 """
 Funcion que devuelve los string que tienen 2 Letras P mayusculas
 """
-def dospalabrasempiezenconletrap(listadestrings):
-    import re
-    for string in listadestrings:
-        if re.search("P{2}", string):
-            print(string)
+def dos_con_p(variable):
+
+    for lenguaje in lista_string:
+        resultado = re.match("(P\w+)\W(P\w+)", lenguaje)
+
+        if resultado:
+            print(resultado.groups())
 
 #Ejercicio 12
 """
@@ -140,5 +139,12 @@ Funcion que se fija si un mail es valido
 def validar_mail_correcto(mail):
     import re
     valido = bool(re.match(r'(\S+)@(\w+)\.(\w+)', mail))
-    print(valido)
-     
+     print(valido)
+    
+
+
+
+
+
+
+
