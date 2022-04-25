@@ -52,7 +52,6 @@ def unidas_por_guion(string):
     print(re.findall(r'([a-z]+)_([a-z]+)', string))
 
 
-
 #Ejercicio 5
 """
 Funcion que dice si un string empieza con x numero especifico
@@ -61,7 +60,6 @@ def empieza_con_numero(string, numero):
     import re
     print(bool(re.search("^"+str(numero), string)))
 # ^ : Inicio de cadena
-
 
 #Ejercicio 6
 """
@@ -83,6 +81,7 @@ def Stringsoloconcaracterespermitidos(string):
     a = bool(re.search(r'[a-z]', string) and re.search(r'[A-Z]', string) and re.search(r"\s", string) and string_sin_espacios.isalnum())
     print(a)
 #Isalnum si un string es todo alfanumerico devuelve true
+#.replace remplaza el primer parametro por el segundo
 
 
 #Ejercicio 8
@@ -98,23 +97,33 @@ def numeros_en_string(string):
 Funcion que devuelve las partes de 
 """
 def a(string):
+    import re
     return (re.findall("-.*-", string))
     
 #Ejercicio 10
 def obtener_substring(substring):
+    import re
     a = print(re.split("@|&", substring))
     print (a)
+
+#Funcion split separa por caracteres se escriben en comillas y para separar se usa barra vertical |
+
 #Ejercicio 11
 """
 Funcion que devuelve los string que tienen 2 Letras P mayusculas
 """
-def dos_con_p(variable):
+def dos_con_p(lista_string):
+    import re
+    for string in lista_string:
+        match = re.match("(P\S*)\s(P\S*)", string)
 
-    for lenguaje in lista_string:
-        resultado = re.match("(P\w+)\W(P\w+)", lenguaje)
-
-        if resultado:
-            print(resultado.groups())
+        if match:
+            print(match.groups())
+""" Match encuentra coincidencias en el principio de un string
+.groups devuelve una lista con las coincidencias
+\s busca espacio
+\S busca cualquier caracter menos espacio y con el asterisco
+pone la P sola o con los caracteres sigueintes"""
 
 #Ejercicio 12
 """
@@ -123,6 +132,15 @@ Funcion que devulve un string cambiando sus espacios, guiones bajos y dos puntos
 def remplazar_por_barra(string):
     import re
     print(re.sub(r"""[ _:]""", "|", string))
+"""Funcion sub toma entre comillas y corchetes 
+lo que se quiere cambiar, por lo que queres cambiar, el string"""
+
+#Ejercicio 13
+def primeros_caracteres(string):
+    import re
+    print(re.sub(r"\W","_", string, 2))
+"""se puede agregar un parametro al final de la funcion sub
+con el numero de veces que queres limitar el remplazo"""
 
 #Ejercicio 14
 """
@@ -130,7 +148,8 @@ Funcion que devuelve un string cambiando sus espacios y tabs por ;
 """
 def remplazar_por_espacio(string):
     import re
-    print(re.sub(r"[    ]",";", string))
+    print(re.sub(r"\s",";", string))
+"""\s busca cualquier tipo de espacio"""
 
 #Ejercicio 15
 """
@@ -138,8 +157,8 @@ Funcion que se fija si un mail es valido
 """
 def validar_mail_correcto(mail):
     import re
-    valido = bool(re.match(r'(\S+)@(\w+)\.(\w+)', mail))
-     print(valido)
+    valido = bool(re.match(r'(\S+)@(\w+).(\w+)', mail))
+    print(valido)
     
 
 
