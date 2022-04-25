@@ -159,6 +159,9 @@ def validar_mail_correcto(mail):
     import re
     valido = bool(re.match(r'(\S+)@(\w+).(\w+)', mail))
     print(valido)
+"""\S busca cualquier caracter menos espacio, @ busca el arroba
+despues solo puede recibir caracter alfanumerico ppor eso el \w
+despues . y despues de nuevo \w. los + son para que busque una o mas veces"""
     
 
 
