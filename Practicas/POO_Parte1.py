@@ -1,6 +1,6 @@
 #Ejercicio 1
 """
-Estado: El estado de un objeto es el cojunto de atributos del objeto. En este caso, el estado es self o alimento y caricias.
+Estado: El estado de un objeto es el cojunto de atributos del objeto. En este caso, el estado es alimento y caricias.
 Interfaz: La interfaz de un objeto es el conjunto de mensajes que cada objeto expone. En este caso seria energia, comer, acariciar, esta debil.
 """
 #Ejercicio 2
