@@ -68,9 +68,6 @@ class Entrenador:
       while dragon.esta_debil == False:
         dragon.volar_en_circulos()
        
-
-r
-
 roberta = Dragon(10, 1000)
 chimuelo = Dragon(200, 1000)
 hipo = Entrenador([roberta])
