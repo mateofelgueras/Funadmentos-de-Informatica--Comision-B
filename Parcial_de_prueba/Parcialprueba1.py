@@ -1,4 +1,4 @@
-"""#Cosigna 1
+#Cosigna 1
 def aparece_string(cadena):
     
  #   Función que determina si una cadena aparece en otra.
@@ -84,7 +84,7 @@ def obtener_media(lista):
         print("Error de división por cero")
     except TypeError:
         print("Solo numeros permitidos")
-obtener_media(muestras_2)"""
+obtener_media(muestras_2)
 
 #Ejercicio 4
 import os
