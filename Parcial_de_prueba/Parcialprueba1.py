@@ -8,7 +8,7 @@ def aparece_string(cadena):
 
 def partedestringquenocontengacenelmedio(cadena):
     import re
-    print((re.findall(r"aa([^c].*?)gg", cadena)))
+    print((re.findall(r"aa([^c]*?)gg", cadena)))
     
 
 #Cosigna 2
@@ -54,9 +54,9 @@ class Auto:
         if self.rpm > 3000:
             if self.cambio == 1:
                 return self.consumo * 3 * ((self.rpm - 2500)/500)
-            if self.cambio == 2:
+            elif self.cambio == 2:
                 return self.consumo * 2 * ((self.rpm - 2500)/500)
-            if self.cambio >= 3:
+            elif self.cambio <= 5:
                 return self.consumo * 1 * ((self.rpm - 2500)/500)
         elif self.cambio == 1:
             return self.consumo * 3
@@ -88,15 +88,12 @@ obtener_media(muestras_2)
 
 #Ejercicio 4
 import os
-from posixpath import abspath, relpath
-import shutil
 os.mkdir("Resultado")
 path = os.getcwd()
 lista = os.listdir(path)
 for i in lista:
     if i.endswith(".txt"):
-        with open("texto_completo.txt", "a") as f:
+        with open("Resultado/texto_completo.txt", "a") as f:
             with open(i, "r") as g:
                 f.write(g.read())
 
-shutil.move("texto_completo.txt", "Resultado/texto_completo.txt")
