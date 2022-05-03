@@ -8,7 +8,7 @@
 #  - cuántas veces aparece el string bc9. P.ej. aparece 2 veces en xsabc9cabcb3sabc9, y ninguna en hola amigos mios.
 #  - la lista de los substrings delimitados entre ‘aa’ y ‘gg’, que no incluyan ninguna ‘c’. P.ej. en ‘ttaatatggttaacatgg’, debe tomar solamente ‘tat’, rechazando ‘cat’.
 
-def cuantas_veces_aparece(self, string):
+def cuantas_veces_aparece(string):
         return string.count('bc9')
 
 def cuantas_veces_aparece(string):
@@ -17,7 +17,7 @@ def cuantas_veces_aparece(string):
 
 def lista_substrings_que_esten_entre_letras(string):
     import re
-    return re.findall(r'aa([^c].*?)gg', string)
+    return re.findall(r'aa([^c]*?)gg', string)
 
 # Consigna N°2
 
@@ -27,19 +27,19 @@ El nombre de la clase es 'Avatar', el estado de un avatar es energia, elementos,
 """
 
 # Python
-class Avatar():
-	def __init__(self, elementos, mascota):
+class Avatar:
+    def __init__(self, mascota):
         self.mascota = mascota
- 		self.energia = 10
+        self.energia = 10
         self.elementos = []
      
     def estado_avatar(self):
          self.energia -= 8
 
     def meditar(self):
- 		self.energia += 1
+ 	    self.energia += 1
 
- 	def comer(self):
+    def comer(self):
         self.energia += 5
 
 
