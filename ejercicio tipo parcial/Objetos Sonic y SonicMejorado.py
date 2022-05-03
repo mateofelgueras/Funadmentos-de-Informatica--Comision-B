@@ -39,8 +39,6 @@ class Avatar:
     def meditar(self):
  	    self.energia += 1
 
-    def comer(self):
-        self.energia += 5
 
 
  

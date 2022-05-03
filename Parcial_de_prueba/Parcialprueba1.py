@@ -65,6 +65,8 @@ class Auto:
         else:
             return self.consumo
 
+  
+
 #Ejercicio3
 
 #Es un error de Division por cero
@@ -78,13 +80,14 @@ def obtener_media(lista):
         for valor in lista:
             sumatoria += valor
         longitud = len(lista)
-
-        return sumatoria / longitud
-    except ZeroDivisionError:
-        print("Error de división por cero")
+        try:
+            return sumatoria / longitud
+        except ZeroDivisionError:
+            print("Error de división por cero")
     except TypeError:
         print("Solo numeros permitidos")
-obtener_media(muestras_2)
+
+
 
 #Ejercicio 4
 import os
