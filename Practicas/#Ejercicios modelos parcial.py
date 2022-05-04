@@ -60,6 +60,8 @@ class Enterprise:
             else:
                 self.potencia -= (cantidad - self.coraza)
                 self.coraza = 0
+        else:
+            self.coraza -= cantidad
     
     def fortalezaDefensiva(self):
         return self.coraza + self.potencia
