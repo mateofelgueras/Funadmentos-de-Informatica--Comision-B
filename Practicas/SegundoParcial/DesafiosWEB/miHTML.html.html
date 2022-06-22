@@ -1,0 +1,58 @@
+<!--Desafio I: Buscá qué otras etiquetas existen y para qué sirven-->
+<!-- Existe la etiqueta <a> que es para enlaces, la etiqueta <strong> para hacer negrita la letra
+<br> para saltos de linea, las <h1>, <h2>, etc. para titulos en el contenido
+<img> para imagenes.
+
+Desafio IV: Buscá qué otras etiquetas semánticas y no semánticas existen.
+Las etiquetas semanticas son las que organizan el contenido pero no lo formatean\
+Las etiquetas no semanticas son las que formatean.
+Semanticas: <Head>, <p>, <div>, <footer>
+No semanticas: <strong>, <I>, <ul> etc.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>THE UNIVERSITY</title>
+
+</head>
+    <body class="body">
+        <main>
+            <section class="titulo">
+                <h1>
+                    Universidad del Cema
+                </h1>
+                Calixto y sus panas
+            </section>
+        <section>
+            <p>
+            <strong>Letra en negrita</strong>
+            <h3 >Lista de materias </h3>
+                <section class="lista">
+                <ul>
+                    <li><a href="https://ucema.edu.ar/webcampus3/course/view.php?id=1018">Fundamentos</a></li>
+                    <li><a href="https://ucema.edu.ar/webcampus3/course/view.php?id=1057">Estadisitica</a></li>
+                    <li><a href="https://ucema.edu.ar/webcampus3/course/view.php?id=1039">Excel</a></li>
+                    <li><a href="https://ucema.edu.ar/webcampus3/course/view.php?id=1046">Negocios Digitales</a></li>
+                    <li><a href="https://ucema.edu.ar/webcampus3/course/view.php?id=975">MicroEconomia</a></li>
+                </ul>
+                </section>
+        </p>
+        </section>
+        <img src = "data:image/png;base64,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" alt="Logo UCEMA">
+    </main>
+        
+    <footer>
+      <h3>Redes de contacto</h3>
+        <ul>              
+            <li><a href="https://www.instagram.com/ucema_edu/">Ig de la facu</a></li>
+            <li><a href="https://twitter.com/UCEMA_edu">twitter de la facu</a></li>
+        </ul>
+    </footer>
+</body>
+   
+</html>

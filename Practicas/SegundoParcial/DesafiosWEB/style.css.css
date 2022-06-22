@@ -1,0 +1,23 @@
+.titulo{
+    margin-left: 20px;
+    background-color: chocolate;
+    border: black 2px double;
+    padding-left: 33px;
+    font-family: 'Courier New', Courier, monospace; 
+}
+
+.body{
+    margin-left: 20px;
+
+} 
+
+.lista{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(208, 195, 195);
+    background-color: cornsilk;
+    border: black 2px double;
+    border-left-width: 5px;
+    margin-left: 5px;
+    font-weight: bolder;
+    font-size:large;
+}
